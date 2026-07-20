@@ -27,3 +27,14 @@ Created a Python script to generate a realistic, messy "Bronze layer" dataset (`
 Wrote the foundational T-SQL scripts to safely establish the data warehouse environment:
 *   Checked for existing instances to avoid conflicts.
 *   Created the `dwh_helpdesk` database.
+
+### 3. Medallion Schema Setup (`02_create_schemas.sql`)
+Structured the database into three distinct layers to map the data lifecycle:
+*   **`Bronze` Schema:** For raw, unprocessed data ingestion exactly as it arrives from the source.
+*   **`Silver` Schema:** For cleaned, standardized, and de-duplicated data.
+*   **`Gold` Schema:** For business-level aggregations and star schema modeling (Fact and Dimension tables) optimized for Power BI.
+
+## Next Steps
+1. Create the physical `bronze.ca_raw_info` table in SQL Server.
+2. Bulk insert the generated CSV file into the Bronze layer.
+3. Write the T-SQL transformation views/stored procedures to clean the data and move it to the `Silver` layer.
