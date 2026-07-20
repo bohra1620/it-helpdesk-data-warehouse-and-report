@@ -2,10 +2,6 @@
 -- COLUMN NAMES IN THE RAW DATA 
 -- TicketID	AgentName	TicketType	Category	Status	OpenDateTime	CloseDateTime	ResolutionTimeHours	CustomerSatisfactionScore	FeedbackComments
 
-IF OBJECT_ID('bronze.ca_raw_info','U') IS NOT NULL
-DROP TABLE bronze.ca_raw_info
-GO
-
 -- DDL SCRIPT for bronze table
 -- Switch to your data warehouse
 USE dwh_helpdesk;
